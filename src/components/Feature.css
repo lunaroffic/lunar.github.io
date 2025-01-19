@@ -1,0 +1,50 @@
+.feature {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: #eee;
+   box-shadow: 5px 5px 20px rgba(128, 0, 128, 0.1);
+  position: relative;
+transform-style: preserve-3d; /* Enable 3D transform */
+  will-change: transform;
+cursor: pointer;
+ overflow: hidden;
+}
+
+.feature:hover {
+  transform: translateY(-5px) translateZ(10px) rotateX(-1deg) rotateY(1deg);
+    box-shadow: 5px 10px 30px rgba(128, 0, 128, 0.5);
+}
+.feature::before {
+  content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at center, rgba(128,0,128,0.1), transparent);
+filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+   z-index: -1;
+}
+.feature:hover::before {
+  opacity: 1;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 8px #a63af9;
+ transition: transform 0.2s ease;
+}
+.feature h3:hover {
+  transform: translateX(3px);
+}
+
+.feature p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

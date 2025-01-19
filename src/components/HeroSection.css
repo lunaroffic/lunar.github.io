@@ -1,0 +1,140 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../assets/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+    transition: background-image 0.3s ease;
+     flex-direction: column;
+}
+.app-container.light-theme .hero-section {
+background-image: url('../assets/banner.jpg');
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(128, 0, 128, 0.1), transparent);
+  z-index: 1;
+}
+.app-container.light-theme .hero-section::before {
+background: linear-gradient(180deg, rgba(158, 158, 158, 0.1), transparent);
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(128, 0, 128, 0.05), transparent);
+  filter: blur(10px);
+  z-index: 1;
+  opacity: 0.7;
+  pointer-events: none;
+
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fade-in {
+to {
+  opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #a63af9;
+  line-height: 1.2;
+   position: relative;
+  overflow: hidden;
+ transition: text-shadow 0.3s ease;
+}
+.app-container.light-theme .hero-content h1 {
+ text-shadow: 0 0 15px #424242;
+}
+
+.hero-content h1::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+    transform: translateX(-50%);
+  background: linear-gradient(to right, transparent,#a63af9, transparent);
+  transition: width 0.5s ease-in-out;
+  will-change: width;
+}
+.app-container.light-theme .hero-content h1::before {
+background: linear-gradient(to right, transparent,#424242, transparent);
+}
+.hero-content h1:hover::before {
+ width: 100%;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #eee;
+position: relative;
+z-index: 1;
+ transition: opacity 0.3s ease-in-out, color 0.3s ease;
+
+}
+.app-container.light-theme .hero-content p {
+  color: #424242;
+}
+.hero-content p::before {
+   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+   background: radial-gradient(circle at center, rgba(128, 0, 128, 0.05), transparent);
+  filter: blur(15px);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+.app-container.light-theme .hero-content p::before {
+   background: radial-gradient(circle at center, rgba(158, 158, 158, 0.05), transparent);
+}
+
+.hero-description {
+      text-align: center;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s ease-out 0.5s forwards;
+    padding: 0 20px;
+     margin-top: 20px;
+}
+.hero-description p {
+font-size: 1.1rem;
+  line-height: 1.4;
+  color: #eee;
+     transition: opacity 0.3s ease-in-out, color 0.3s ease;
+}

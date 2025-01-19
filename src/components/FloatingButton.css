@@ -1,0 +1,11 @@
+.floating-button-container {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+.floating-button-container button {
+  pointer-events: auto;
+    border-radius: 10px;
+}

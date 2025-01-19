@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+    transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease,  box-shadow 0.3s ease;
+
+
+}
+.header.fixed {
+  padding: 20px 40px;
+  border-bottom: none;
+
+}
+.header-logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #a63af9;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.header-logo:hover{
+ color: #fff;
+}
+.app-container.light-theme .header-logo {
+color: #212121;
+  text-shadow: 0 0 10px #a63af9;
+}
+.header-logo-animation{
+width: 50px;
+height: 50px;
+ display: inline-block;
+  margin-right: 20px;
+      animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+  from {
+      transform: rotate(0deg)
+  }
+   to {
+      transform: rotate(360deg)
+  }
+
+}
+.header-logo-animation svg{
+  width: 100%;
+  height: 100%;
+}
+.header-logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+   border: 2px solid #a63af9;
+object-fit: cover;
+}
+.help-link {
+display: flex;
+  align-items: center;
+  text-decoration: none;
+color: #eee;
+   margin-right: 20px;
+   transition: color 0.3s ease;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+      transition: color 0.3s ease;
+gap: 5px;
+}
+.app-container.light-theme .help-link {
+ color: #212121;
+}
+.help-link:hover {
+  color: #fff;
+   animation: blinkText 1.5s ease infinite;
+}
+.help-link:hover .header-icon {
+ color:  #f44336;
+  animation: heartBlink 1.5s ease infinite;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-link {
+  color: #eee;
+  text-decoration: none;
+  margin: 0 25px;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+    display: flex;
+  align-items: center;
+   gap: 5px;
+}
+.app-container.light-theme .header-link {
+color: #212121;
+}
+.header-icon {
+  font-size: 1.2rem;
+}
+.header-link:hover {
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.app-container.light-theme .header{
+background-color: rgba(0,0,0,0.05);
+border-bottom-color: rgba(0,0,0,0.1)
+}
+
+@keyframes blinkText {
+0%, 100% {
+  text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+
+}
+50% {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+
+}
+}
+@keyframes heartBlink {
+  0%, 100% {
+       color:  #f44336; /* Ярко красный цвет */
+      transform: translateY(0) scale(1);
+
+  }
+  50% {
+       color: rgba(244, 67, 54, 0.5) ;
+       transform: translateY(-2px) scale(1.2);
+      
+  }
+}
